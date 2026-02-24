@@ -2,17 +2,17 @@
   "name": "arcane-forge-vscode-extension",
   "displayName": "Arcane Forge",
   "description": "Sync Arcane Forge knowledge base files into VS Code workspaces.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "ArcaneForgeAI",
   "license": "Apache-2.0",
   "icon": "media/icon.png",
   "homepage": "https://arcaneforge.ai",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arcaneforge/arcane-forge-vscode-extension.git"
+    "url": "https://github.com/arcane-forge-ai/arcane-forge-vscode-extension.git"
   },
   "bugs": {
-    "url": "https://arcaneforge.ai/contact"
+    "url": "https://github.com/arcane-forge-ai/arcane-forge-vscode-extension/issues"
   },
   "keywords": [
     "arcane forge",
