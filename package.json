@@ -1,0 +1,108 @@
+{
+  "name": "arcane-forge-vscode-extension",
+  "displayName": "Arcane Forge",
+  "description": "Sync Arcane Forge knowledge base files into VS Code workspaces.",
+  "version": "0.0.1",
+  "publisher": "ArcaneForgeAI",
+  "license": "Apache-2.0",
+  "icon": "media/icon.png",
+  "homepage": "https://arcaneforge.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arcaneforge/arcane-forge-vscode-extension.git"
+  },
+  "bugs": {
+    "url": "https://arcaneforge.ai/contact"
+  },
+  "keywords": [
+    "arcane forge",
+    "knowledge base",
+    "sync",
+    "game development",
+    "vscode"
+  ],
+  "galleryBanner": {
+    "color": "#0a5c8c",
+    "theme": "dark"
+  },
+  "markdown": "github",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:arcaneForge.login",
+    "onCommand:arcaneForge.logout",
+    "onCommand:arcaneForge.selectProject",
+    "onCommand:arcaneForge.pullKnowledgeBase",
+    "onCommand:arcaneForge.pushKnowledgeBase",
+    "onCommand:arcaneForge.showSyncStatus"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "arcaneForge.login",
+        "title": "Arcane Forge: Login"
+      },
+      {
+        "command": "arcaneForge.logout",
+        "title": "Arcane Forge: Logout"
+      },
+      {
+        "command": "arcaneForge.selectProject",
+        "title": "Arcane Forge: Select Project"
+      },
+      {
+        "command": "arcaneForge.pullKnowledgeBase",
+        "title": "Arcane Forge: Pull Knowledge Base"
+      },
+      {
+        "command": "arcaneForge.pushKnowledgeBase",
+        "title": "Arcane Forge: Push Knowledge Base"
+      },
+      {
+        "command": "arcaneForge.showSyncStatus",
+        "title": "Arcane Forge: Show Sync Status"
+      }
+    ],
+    "configuration": {
+      "title": "Arcane Forge",
+      "properties": {
+        "arcaneForge.kbDirectory": {
+          "type": "string",
+          "default": "game_knowledge_base",
+          "scope": "resource",
+          "description": "Workspace-relative folder used for downloaded Arcane Forge knowledge base files."
+        },
+        "arcaneForge.apiBaseUrl": {
+          "type": "string",
+          "default": "https://arcane-forge-service.dev.arcaneforge.ai",
+          "scope": "machine",
+          "description": "Arcane Forge API base URL."
+        },
+        "arcaneForge.webBaseUrl": {
+          "type": "string",
+          "default": "https://arcaneforge.ai",
+          "scope": "machine",
+          "description": "Arcane Forge website base URL used for browser login."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile",
+    "package:vsix": "npx @vscode/vsce package",
+    "publish:dryrun": "npx @vscode/vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.86.0",
+    "@vscode/vsce": "^3.2.2",
+    "typescript": "^5.4.0"
+  }
+}

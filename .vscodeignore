@@ -1,0 +1,11 @@
+src/**
+.vscode/**
+.github/**
+node_modules/**
+openapi.json
+tsconfig.json
+*.tsbuildinfo
+.env
+.env.*
+**/.DS_Store
+
